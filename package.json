@@ -1,0 +1,19 @@
+{
+  "name": "cube-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:tailwind": "cross-env NODE_ENV=development postcss ./src/style.css -o ./public/style.css -w --verbose",
+    "dev:server": "live-server . -V --no-css-inject"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  }
+}

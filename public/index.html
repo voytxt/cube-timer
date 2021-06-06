@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="../manifest.json">
+  <title>Cube Timer</title>
+</head>
+
+<body>
+
+  <!-- Timer -->
+  <section class="absolute grid h-screen w-screen items-center justify-center">
+    <span id="timer" class="text-[10rem] 2xl:text-[17rem] font-light select-none">0.00</span>
+  </section>
+
+  <!-- Action Buttons (+2, DNF and DEL buttons) -->
+  <section id="actionButtons" class="
+    absolute flex
+    rounded-r-none flex-col 
+    right-0 2xl:flex-row 2xl:gap-10 text-3xl h-screen 2xl:w-screen 2xl:items-center justify-center 2xl:pt-96 hidden hide-when-timing
+  ">
+    <button id="ok" class="text-white focus:outline-none w-32 select-none 2xl:p-3 pl-0.5 py-2 pr-3 border-4 rounded-lg rounded-r-none 2xl:rounded-r-lg border-r-0 2xl:border-r-4 active:border-green-200 transition-colors duration-100` bg-green-500">OK</button>
+    <button id="plusTwo" class="text-white focus:outline-none w-32 select-none 2xl:p-3 pl-0.5 py-2 pr-3 border-4 rounded-lg rounded-r-none 2xl:rounded-r-lg border-r-0 2xl:border-r-4 active:border-amber-200 transition-colors duration-100` bg-amber-500">+2</button>
+    <button id="dnf" class="text-white focus:outline-none w-32 select-none 2xl:p-3 pl-0.5 py-2 pr-3 border-4 rounded-lg rounded-r-none 2xl:rounded-r-lg border-r-0 2xl:border-r-4 active:border-red-200 transition-colors duration-100` bg-red-500">DNF</button>
+    <button id="delete" class="text-white focus:outline-none w-32 select-none 2xl:p-3 pl-0.5 py-2 pr-3 border-4 rounded-lg rounded-r-none 2xl:rounded-r-lg border-r-0 2xl:border-r-4 active:border-blueGray-200 transition-colors duration-100` bg-blueGray-500">DEL</button>
+  </section>
+
+  <!-- Scramble -->
+  <section class="absolute text-center top-4 w-full hide-when-timing">
+    <span id="scramble" class="text-xl 2xl:text-4xl select-none 2xl:select-all word-tracking-wide 2xl:font-light">Loading a scramble...</span>
+  </section>
+
+  <!-- Personal Bests -->
+  <section class="
+    absolute w-full text-center hide-when-timing
+        select-none     text-xl      bottom-10
+    2xl:select-auto 2xl:text-2xl 2xl:bottom-16
+  ">
+    <div class="hidden">single: <span id="pbSingle"></span></div>
+    <div class="hidden">mo3: <span id="pbMo3"></span></div>
+    <div class="hidden">ao5: <span id="pbAo5"></span></div>
+    <div class="hidden">ao12: <span id="pbAo12"></span></div>
+  </section>
+
+  <!-- History (Past Solves) -->
+  <section class="absolute top-4 left-4 hide-when-timing select-none">
+    <div id="history" class="flex flex-col text-center overflow-y-scroll hide-scrollbar h-[calc(100vh-2rem)]"></div>
+  </section>
+
+  <!-- About -->
+  <section class="absolute text-center text-sm 2xl:text-base w-full bottom-2 2xl:bottom-4 select-none hide-when-timing">
+    <span>
+      Website by <a href="https://github.com/vojta-dev">Vojta</a>,
+      scramble generator by <a href="https://github.com/saadq">Saad Quadri</a>,
+      huge overall inspiration from <a href="https://cstimer.net/">csTimer</a>
+    </span>
+  </section>
+
+</body>
+
+<script type="module" src="./js/main.js"></script>
+
+</html>
