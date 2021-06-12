@@ -4,9 +4,9 @@ Literally stolen from https://github.com/saadq/scramby/blob/master/src/scrambler
 
 Well, I hope legally stolen...
 
-Everything in this file (well, except this comment) was made by https://github.com/saadq/
+Everything in this file (well, except this comment and some modifications mentioned below) was made by https://github.com/saadq/
 
-I also made some little modifications (adding the getScramble function, commentning out lines 32 and 2028)
+I also made some little modifications (adding the getScramble function, commenting out lines 32 and 2028)
 
 */
 
