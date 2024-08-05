@@ -36,11 +36,6 @@
 
 <svelte:window onkeypress={handleKeyPress} />
 
-<div>{(timer / 1000).toFixed(status === 'running' ? 1 : 3)}</div>
-
-<style>
-  div {
-    text-align: center;
-    font-size: 5rem;
-  }
-</style>
+<div class="text-center text-8xl">
+  {(timer / 1000).toFixed(status === 'running' ? 1 : 3)}
+</div>

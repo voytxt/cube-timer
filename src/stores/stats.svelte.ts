@@ -21,7 +21,10 @@ type Average = {
 function calculateAverage(times: Time[]): number {
   const n = times.length;
 
-  if (n < 2) throw new Error('not possible to calculate an average of less than 2 times');
+  if (n < 2)
+    throw new Error(
+      'not possible to calculate an average of less than 2 times',
+    );
 
   if (n === 2) {
     return times.reduce((a, c) => a + c.rawTime, 0) / 2;
@@ -35,13 +38,27 @@ function calculateAverage(times: Time[]): number {
   return sum / n;
 }
 
-let statsPreset: string[] = $state(['single', 'mo3', 'ao5', 'ao12', 'ao50', 'ao100', 'ao500', 'aoall']);
+let statsPreset: string[] = $state([
+  'single',
+  'mo3',
+  'ao5',
+  'ao12',
+  'ao50',
+  'ao100',
+  'ao500',
+  'aoall',
+]);
 
 let stats: Stat[] = $derived.by(() => {
   const times = useTimes().value;
 
   return statsPreset.map((preset) => {
-    const stat: Stat = { name: preset, description: null, current: null, best: null };
+    const stat: Stat = {
+      name: preset,
+      description: null,
+      current: null,
+      best: null,
+    };
 
     if (preset === 'single') {
       if (times.length >= 1) {
@@ -58,14 +75,24 @@ let stats: Stat[] = $derived.by(() => {
           const means: number[] = [];
 
           for (let i = 0; i < times.length - numberOfSolves + 1; i++) {
-            means.push(times.slice(i, i + numberOfSolves).reduce((a, c) => a + c.rawTime, 0));
+            means.push(
+              times
+                .slice(i, i + numberOfSolves)
+                .reduce((a, c) => a + c.rawTime, 0),
+            );
           }
 
           const bestMean = means.toSorted((a, b) => a - b)[0];
 
           stat.description = `arithmetic mean of ${numberOfSolves} consecutive solves`;
-          stat.current = { rawTime: means.at(-1)!, formattedTime: (means.at(-1)! / 1000).toFixed(3) };
-          stat.best = { rawTime: bestMean, formattedTime: (bestMean / 1000).toFixed(3) };
+          stat.current = {
+            rawTime: means.at(-1)!,
+            formattedTime: (means.at(-1)! / 1000).toFixed(3),
+          };
+          stat.best = {
+            rawTime: bestMean,
+            formattedTime: (bestMean / 1000).toFixed(3),
+          };
         }
       }
     } else if (preset.startsWith('ao')) {
@@ -84,8 +111,14 @@ let stats: Stat[] = $derived.by(() => {
           const bestMean = averages.toSorted((a, b) => a - b)[0];
 
           // stat.description = `arithmetic mean of ${numberOfSolves} consecutive solves, where the ${}`;
-          stat.current = { rawTime: averages.at(-1)!, formattedTime: (averages.at(-1)! / 1000).toFixed(3) };
-          stat.best = { rawTime: bestMean, formattedTime: (bestMean / 1000).toFixed(3) };
+          stat.current = {
+            rawTime: averages.at(-1)!,
+            formattedTime: (averages.at(-1)! / 1000).toFixed(3),
+          };
+          stat.best = {
+            rawTime: bestMean,
+            formattedTime: (bestMean / 1000).toFixed(3),
+          };
         }
       } else if (arg === 'all') {
         if (times.length >= 2) {
@@ -98,8 +131,14 @@ let stats: Stat[] = $derived.by(() => {
           const bestMean = averages.toSorted((a, b) => a - b)[0];
 
           // stat.description = `arithmetic mean of ${numberOfSolves} consecutive solves`;
-          stat.current = { rawTime: averages.at(-1)!, formattedTime: (averages.at(-1)! / 1000).toFixed(3) };
-          stat.best = { rawTime: bestMean, formattedTime: (bestMean / 1000).toFixed(3) };
+          stat.current = {
+            rawTime: averages.at(-1)!,
+            formattedTime: (averages.at(-1)! / 1000).toFixed(3),
+          };
+          stat.best = {
+            rawTime: bestMean,
+            formattedTime: (bestMean / 1000).toFixed(3),
+          };
         }
       }
     }

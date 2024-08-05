@@ -1,4 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: oklch(25% 0.037 300);
   --header-background: oklch(from var(--background) calc(l + 0.07) c h);
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--background);
+  color: white;
+  margin: 0;
+  font-family: 'Cartograph CF', monospace; /* todo switch font https://www.google.com/search?client=firefox-b-d&q=fonts+like+cartograph+cf */
+  gap: 1rem;
+  height: 100vh;
+  padding: 1rem;
+  margin: 0;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template: 6rem 1fr / max-content 1fr max-content;
 }

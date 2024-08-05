@@ -5,14 +5,7 @@
 </script>
 
 {#if scramble.value === null}
-  <div>Loading...</div>
+  <div class="text-2xl">Loading...</div>
 {:else}
-  <div>{scramble.value}</div>
+  <div class="text-2xl">{scramble.value}</div>
 {/if}
-
-<style>
-  div {
-    font-family: 'Cartograph CF';
-    font-size: 1.5rem;
-  }
-</style>

@@ -10,70 +10,27 @@
   setSearchDebug({ logPerf: false });
 </script>
 
-<header class="card info">
+<header class="card flex justify-center px-8 py-2">
   <Info />
 </header>
-<div class="card scramble">
+<div class="card flex items-center justify-center">
   <Scramble />
 </div>
-<aside class="card stats">
+<aside class="card px-8 py-2 [grid-area:span_2]">
   <Stats />
 </aside>
-<aside class="card times">
+<aside
+  class="card overflow-y-scroll p-4 [scrollbar-color:var(--background)_var(--header-background)] [scrollbar-width:thin]"
+>
   <Times />
 </aside>
-<main class="card timer">
+<main class="card flex items-center justify-center">
   <Timer />
 </main>
 
 <style>
-  :global(body) {
-    font-family: sans-serif;
-    background-color: var(--background);
-    color: white;
-    margin: 0;
-    font-family: 'Cartograph CF', monospace; /* todo switch font https://www.google.com/search?client=firefox-b-d&q=fonts+like+cartograph+cf */
-    gap: 1rem;
-    height: 100vh;
-    padding: 1rem;
-    margin: 0;
-    box-sizing: border-box;
-
-    display: grid;
-    grid-template: 6rem 1fr / max-content 1fr max-content;
-  }
-
   .card {
     background-color: var(--header-background);
     border-radius: 1rem;
-
-    &.info {
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem 2rem;
-    }
-
-    &.scramble {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &.stats {
-      grid-area: span 2;
-      padding: 0.5rem 2rem;
-    }
-
-    &.times {
-      overflow-y: scroll;
-      scrollbar-color: var(--background) var(--header-background);
-      scrollbar-width: thin;
-    }
-
-    &.timer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 </style>
