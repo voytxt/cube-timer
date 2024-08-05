@@ -1,9 +1,13 @@
-<script>
+<script lang="ts">
   import Info from '$lib/Info.svelte';
   import Scramble from '$lib/Scramble.svelte';
+  import Stats from '$lib/Stats.svelte';
   import Timer from '$lib/Timer.svelte';
   import Times from '$lib/Times.svelte';
+  import { setSearchDebug } from 'cubing/search';
   import '../main.css';
+
+  setSearchDebug({ logPerf: false });
 </script>
 
 <header class="card info">
@@ -12,6 +16,9 @@
 <div class="card scramble">
   <Scramble />
 </div>
+<aside class="card stats">
+  <Stats />
+</aside>
 <aside class="card times">
   <Times />
 </aside>
@@ -33,7 +40,7 @@
     box-sizing: border-box;
 
     display: grid;
-    grid-template: 6rem 1fr / max-content 1fr;
+    grid-template: 6rem 1fr / max-content 1fr max-content;
   }
 
   .card {
@@ -50,6 +57,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    &.stats {
+      grid-area: span 2;
+      padding: 0.5rem 2rem;
     }
 
     &.times {

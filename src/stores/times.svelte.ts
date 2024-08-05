@@ -1,8 +1,8 @@
 /**
- * rawTime = number of milliseconds
- * formattedTime = number of seconds
+ * @param rawTime - number of milliseconds
+ * @param formattedTime - number of seconds
  */
-type Time = {
+export type Time = {
   rawTime: number;
   formattedTime: string;
   // penalty: ?; // todo
@@ -10,7 +10,7 @@ type Time = {
   scramble: string;
 };
 
-const times: Time[] = $state([]);
+let times: Time[] = $state([]);
 
 export function useTimes() {
   return {
