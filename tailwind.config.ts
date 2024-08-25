@@ -10,7 +10,7 @@ export default {
         background: { light: colors.indigo[200], dark: colors.indigo[950] },
         'card-background': { light: colors.violet[200], dark: colors.violet[950] },
       },
-      fontFamily: { main: ['Cartograph CF', 'monospace'] },
+      fontFamily: { main: ['JetBrains Mono', 'monospace'] },
     },
   },
   plugins: [
