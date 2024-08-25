@@ -66,7 +66,7 @@ const stats: Stat[] = $derived.by(() => {
       const arg = preset.slice(2);
 
       if (/^\d+$/.test(arg)) {
-        const numberOfSolves = parseInt(arg);
+        const numberOfSolves = Number.parseInt(arg);
 
         if (times.length >= numberOfSolves) {
           const means: number[] = [];
@@ -92,7 +92,7 @@ const stats: Stat[] = $derived.by(() => {
       const arg = preset.slice(2);
 
       if (/^\d+$/.test(arg)) {
-        const numberOfSolves = parseInt(arg);
+        const numberOfSolves = Number.parseInt(arg);
 
         if (times.length >= numberOfSolves) {
           const averages: number[] = [];

@@ -36,7 +36,9 @@
 
       colorClass = 'red';
       clearTimeout(colorTimeout ?? undefined);
-      colorTimeout = setTimeout(() => (colorClass = 'green'), MIN_HOLD_TIME);
+      colorTimeout = setTimeout(() => {
+        colorClass = 'green';
+      }, MIN_HOLD_TIME);
     } else if (timer.isRunning) {
       didLetGo = false;
 
