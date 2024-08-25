@@ -21,10 +21,7 @@ type Average = {
 function calculateAverage(times: Time[]): number {
   const n = times.length;
 
-  if (n < 2)
-    throw new Error(
-      'not possible to calculate an average of less than 2 times',
-    );
+  if (n < 2) throw new Error('not possible to calculate an average of less than 2 times');
 
   if (n === 2) {
     return times.reduce((a, c) => a + c.rawTime, 0) / 2;
@@ -38,7 +35,7 @@ function calculateAverage(times: Time[]): number {
   return sum / n;
 }
 
-let statsPreset: string[] = $state([
+const statsPreset: string[] = $state([
   'single',
   'mo3',
   'ao5',
@@ -49,7 +46,7 @@ let statsPreset: string[] = $state([
   'aoall',
 ]);
 
-let stats: Stat[] = $derived.by(() => {
+const stats: Stat[] = $derived.by(() => {
   const times = useTimes().value;
 
   return statsPreset.map((preset) => {
@@ -75,11 +72,7 @@ let stats: Stat[] = $derived.by(() => {
           const means: number[] = [];
 
           for (let i = 0; i < times.length - numberOfSolves + 1; i++) {
-            means.push(
-              times
-                .slice(i, i + numberOfSolves)
-                .reduce((a, c) => a + c.rawTime, 0),
-            );
+            means.push(times.slice(i, i + numberOfSolves).reduce((a, c) => a + c.rawTime, 0));
           }
 
           const bestMean = means.toSorted((a, b) => a - b)[0];

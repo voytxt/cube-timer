@@ -1,13 +1,12 @@
+import eslint from '@eslint/js';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
+import tseslint from 'typescript-eslint';
 
-export default [
-  // add more generic rule sets here, such as:
-  // js.configs.recommended,
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
-  {
-    rules: {
-      // override/add rules settings here, such as:
-      // 'svelte/rule-name': 'error'
-    },
-  },
-];
+  eslintPluginPrettierRecommended,
+);

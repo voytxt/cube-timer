@@ -10,7 +10,7 @@ export type Time = {
   scramble: string;
 };
 
-let times: Time[] = $state([]);
+const times: Time[] = $state([]);
 
 export function useTimes() {
   return {

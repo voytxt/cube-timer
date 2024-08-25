@@ -20,7 +20,7 @@
   <Stats />
 </aside>
 <aside
-  class="card overflow-y-scroll p-4 [scrollbar-color:var(--background)_var(--header-background)] [scrollbar-width:thin]"
+  class="card overflow-y-scroll p-4 scrollbar-thin scrollbar-color-light dark:scrollbar-color-dark"
 >
   <Times />
 </aside>
@@ -28,9 +28,8 @@
   <Timer />
 </main>
 
-<style>
+<style lang="postcss">
   .card {
-    background-color: var(--header-background);
-    border-radius: 1rem;
+    @apply rounded-2xl bg-card-background-light dark:bg-card-background-dark;
   }
 </style>
