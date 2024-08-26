@@ -21,3 +21,9 @@
     {/each}
   </tbody>
 </table>
+
+<style lang="postcss">
+  td {
+    @apply px-2 py-1;
+  }
+</style>

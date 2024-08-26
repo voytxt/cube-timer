@@ -13,7 +13,7 @@
 <header class="card flex justify-center px-8 py-2">
   <Info />
 </header>
-<div class="card flex items-center justify-center">
+<div class="card flex items-center justify-center px-8">
   <Scramble />
 </div>
 <aside class="card px-8 py-2 [grid-area:span_2]">

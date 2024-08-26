@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useScramble } from '../stores/scramble.svelte';
+  import { useScramble } from '$stores/scramble.svelte';
 
   export const scramble = useScramble();
 </script>

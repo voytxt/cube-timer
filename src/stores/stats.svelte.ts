@@ -13,7 +13,7 @@ type Average = {
 };
 
 /**
- * calculate the average of N times (aoN), where the worst 5 % of times and the best 5 % of times get removed
+ * Calculate the average of N times (aoN), where the worst 5 % of times and the best 5 % of times get removed
  * then the final average is calculated as an arithmetic mean from the remaining 90 % of times
  * @param times - array of Times
  * @returns the average
