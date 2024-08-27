@@ -10,26 +10,24 @@
   setSearchDebug({ logPerf: false });
 </script>
 
-<header class="card flex justify-center px-8 py-2">
+<header class="card grid-center">
   <Info />
 </header>
-<div class="card flex items-center justify-center px-8">
+<div class="card grid-center px-6">
   <Scramble />
 </div>
-<aside class="card px-8 py-2 [grid-area:span_2]">
+<aside class="card p-4 [grid-area:span_2]">
   <Stats />
 </aside>
-<aside
-  class="card overflow-y-scroll p-4 scrollbar-thin scrollbar-color-light dark:scrollbar-color-dark"
->
+<aside class="card overflow-y-scroll p-4">
   <Times />
 </aside>
-<main class="card flex items-center justify-center">
+<main class="card grid-center">
   <Timer />
 </main>
 
 <style lang="postcss">
   .card {
-    @apply rounded-2xl bg-card-background-light dark:bg-card-background-dark;
+    @apply bg-card-background shadow-card rounded-xl;
   }
 </style>

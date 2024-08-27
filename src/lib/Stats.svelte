@@ -24,6 +24,6 @@
 
 <style lang="postcss">
   td {
-    @apply px-2 py-1;
+    @apply px-3 py-1;
   }
 </style>
