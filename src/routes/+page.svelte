@@ -13,7 +13,7 @@
 <header class="card grid-center">
   <Info />
 </header>
-<div class="card grid-center px-6">
+<div class="card px-6 grid-center">
   <Scramble />
 </div>
 <aside class="card p-4 [grid-area:span_2]">
@@ -28,6 +28,6 @@
 
 <style lang="postcss">
   .card {
-    @apply bg-card-background shadow-card rounded-xl;
+    @apply rounded-xl bg-card-background shadow-card;
   }
 </style>

@@ -15,7 +15,7 @@
 }
 
 body {
-  @apply bg-background m-0 box-border grid h-screen gap-6 p-6 font-main text-black dark:text-white dark:backdrop-brightness-75;
+  @apply m-0 box-border grid h-screen gap-6 bg-background p-6 font-main text-black dark:text-white dark:backdrop-brightness-75;
   grid-template: 6rem 1fr / max-content 1fr max-content;
 
   /* prettier-ignore */

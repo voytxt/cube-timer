@@ -6,4 +6,5 @@ export default defineConfig({
 
   // https://github.com/cubing/cubing.js/issues/323
   worker: { format: 'es' },
+  optimizeDeps: { exclude: ['cubing'] },
 });
