@@ -14,16 +14,20 @@
   }
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
-  @apply m-0 box-border grid h-screen gap-6 bg-background p-6 font-main text-black dark:text-white dark:backdrop-brightness-75;
+  @apply m-0 box-border grid h-screen gap-6 bg-background p-6 font-main text-black dark:text-slate-300 dark:backdrop-brightness-75;
   grid-template: 6rem 1fr / max-content 1fr max-content;
 
   /* prettier-ignore */
   background-image:
-    radial-gradient(at 0%                      100%                   , #ec6bfa 0px, transparent 50%),
-    radial-gradient(at calc(var(--pos) + 40%)  calc(100% - var(--pos)), #7816f8 0px, transparent 50%),
-    radial-gradient(at calc(100% - var(--pos)) calc(var(--pos) / 2)   , #d25ffc 0px, transparent 50%),
-    radial-gradient(at var(--pos)              var(--pos)             , #52abff 0px, transparent 50%);
+    radial-gradient(at 0%                      100%                   , light-dark(#ec6bfa, #913a08) 0px, transparent 50%),
+    radial-gradient(at calc(var(--pos) + 40%)  calc(100% - var(--pos)), light-dark(#7816f8, #08756c) 0px, transparent 50%),
+    radial-gradient(at calc(100% - var(--pos)) calc(var(--pos) / 2)   , light-dark(#d25ffc, #124cb8) 0px, transparent 50%),
+    radial-gradient(at var(--pos)              var(--pos)             , light-dark(#52abff, #5a05ba) 0px, transparent 50%);
 
   animation: gradient 30s linear infinite alternate;
 }

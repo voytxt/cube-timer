@@ -42,7 +42,7 @@ export default {
           extend: {
             colors: {
               background: colors.indigo[950],
-              'card-background': colors.violet[950],
+              'card-background': colors.black,
               scrollbar: colors.indigo[950],
             },
           },

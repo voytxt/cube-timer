@@ -15,7 +15,6 @@
         day: '2-digit',
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
       })}
       <tr>
         <td class="text-right">{time.formattedTime}</td>

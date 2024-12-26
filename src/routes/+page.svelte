@@ -10,7 +10,7 @@
   setSearchDebug({ logPerf: false });
 </script>
 
-<header class="card grid-center">
+<header class="card min-w-56 grid-center">
   <Info />
 </header>
 <div class="card px-6 grid-center">
@@ -28,6 +28,6 @@
 
 <style lang="postcss">
   .card {
-    @apply rounded-xl bg-card-background shadow-card;
+    @apply rounded-xl border-slate-500 bg-card-background shadow-card dark:border;
   }
 </style>
