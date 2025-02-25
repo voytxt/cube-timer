@@ -6,8 +6,11 @@
   import Times from '$lib/Times.svelte';
   import { setSearchDebug } from 'cubing/search';
   import '../app.css';
+  import { useScramble } from '$stores/scramble.svelte';
 
   setSearchDebug({ logPerf: false });
+
+  useScramble().generateScramble();
 </script>
 
 <header

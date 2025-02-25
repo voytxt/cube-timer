@@ -9,8 +9,6 @@ export function useScramble() {
     scramble = await randomScrambleForEvent('333');
   }
 
-  generateScramble();
-
   return {
     get value() {
       return scramble?.toString() ?? null;
