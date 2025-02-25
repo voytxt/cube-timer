@@ -14,7 +14,10 @@
 
     %sveltekit.head%
   </head>
-  <body data-sveltekit-preload-data="hover">
-    <div style="display: contents">%sveltekit.body%</div>
+  <body
+    data-sveltekit-preload-data="hover"
+    class="bg-background m-0 box-border grid h-screen gap-6 p-6 font-mono text-black dark:text-slate-300 dark:backdrop-brightness-75"
+  >
+    <div class="contents">%sveltekit.body%</div>
   </body>
 </html>

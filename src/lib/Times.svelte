@@ -17,16 +17,10 @@
         minute: '2-digit',
       })}
       <tr>
-        <td class="text-right">{time.formattedTime}</td>
-        <td class="text-gray-400">#{index}</td>
-        <td class="text-gray-400">{date}</td>
+        <td class="px-2 py-1 text-right">{time.formattedTime}</td>
+        <td class="px-2 py-1 text-gray-400">#{index}</td>
+        <td class="px-2 py-1 text-gray-400">{date}</td>
       </tr>
     {/each}
   </tbody>
 </table>
-
-<style lang="postcss">
-  td {
-    @apply px-2 py-1;
-  }
-</style>

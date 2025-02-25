@@ -2,6 +2,7 @@
   "name": "timer",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -9,27 +10,26 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write ./src",
-    "lint": "pnpm biome lint --write ./src"
+    "lint": "prettier --check ."
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@sveltejs/adapter-auto": "^3.3.1",
-    "@sveltejs/kit": "^2.15.0",
+    "@sveltejs/adapter-vercel": "^5.6.3",
+    "@sveltejs/kit": "^2.17.3",
     "@sveltejs/vite-plugin-svelte": "5.0.3",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "prettier": "^3.4.2",
-    "prettier-plugin-svelte": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "svelte": "5.14.4",
-    "svelte-check": "^4.1.1",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-themer": "^4.1.1",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.6"
+    "@tailwindcss/vite": "^4.0.9",
+    "cubing": "^0.54.2",
+    "prettier": "^3.5.2",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "svelte": "^5.20.4",
+    "svelte-check": "^4.1.4",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
   },
-  "type": "module",
-  "dependencies": {
-    "cubing": "^0.53.8"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

@@ -10,7 +10,7 @@
   const KEYBOARD_KEY = ' ';
   const MIN_HOLD_TIME = 300;
 
-  let colorClass: '' | 'red' | 'green' = $state('');
+  let colorClass: '' | 'text-red-500' | 'text-green-500' = $state('');
   let colorTimeout: null | number = $state(null);
 
   /**
@@ -34,10 +34,10 @@
     if (!timer.isRunning && !isHeld) {
       holdStart = new Date().getTime();
 
-      colorClass = 'red';
+      colorClass = 'text-red-500';
       clearTimeout(colorTimeout ?? undefined);
       colorTimeout = setTimeout(() => {
-        colorClass = 'green';
+        colorClass = 'text-green-500';
       }, MIN_HOLD_TIME);
     } else if (timer.isRunning) {
       didLetGo = false;
@@ -75,12 +75,3 @@
 <div class="text-center text-8xl {colorClass}">
   {(timer.time / 1000).toFixed(timer.isRunning ? 1 : 3)}
 </div>
-
-<style lang="postcss">
-  .red {
-    @apply text-red-500;
-  }
-  .green {
-    @apply text-green-500;
-  }
-</style>

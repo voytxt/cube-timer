@@ -14,16 +14,10 @@
 
     {#each stats.value as stat}
       <tr>
-        <td title={stat.description}>{stat.name}</td>
-        <td>{stat.current?.formattedTime}</td>
-        <td>{stat.best?.formattedTime}</td>
+        <td title={stat.description} class="px-3 py-1">{stat.name}</td>
+        <td class="px-3 py-1">{stat.current?.formattedTime}</td>
+        <td class="px-3 py-1">{stat.best?.formattedTime}</td>
       </tr>
     {/each}
   </tbody>
 </table>
-
-<style lang="postcss">
-  td {
-    @apply px-3 py-1;
-  }
-</style>

@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-background: light-dark(#954bf780, var(--color-indigo-950));
+  --color-card-background: light-dark(#e9e3eacc, black);
+  --color-scrollbar: light-dark(var(--colors-indigo-200), var(--color-indigo-950));
+
+  --font-mono: 'JetBrains Mono', 'monospace';
+}
 
 @property --pos {
   syntax: '<percentage>';
@@ -19,7 +25,6 @@
 }
 
 body {
-  @apply m-0 box-border grid h-screen gap-6 bg-background p-6 font-main text-black dark:text-slate-300 dark:backdrop-brightness-75;
   grid-template: 6rem 1fr / max-content 1fr max-content;
 
   /* prettier-ignore */
